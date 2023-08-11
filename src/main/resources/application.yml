@@ -1,0 +1,28 @@
+server:
+  port: 8082
+
+
+cloud:
+  aws:
+    region:
+      static: us-east-1
+      auto: false
+    credentials:
+      access-key: <yoursecretkey>
+      secret-key: <youraccesskey>
+    end-point:
+      uri: <yoursqsqueueurl>
+sns:
+  topic:
+    arn: <yoursnstopicarn>
+
+s3:
+  aws:
+    bucket:
+      name: <yours3bucketname>
+spring:
+  autoconfigure:
+    exclude:
+      - org.springframework.cloud.aws.autoconfigure.context.ContextInstanceDataAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextStackAutoConfiguration
+      - org.springframework.cloud.aws.autoconfigure.context.ContextRegionProviderAutoConfiguration
